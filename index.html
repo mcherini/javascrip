@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Aritmética</title>
     <link rel="stylesheet" href="./styles.css">
-    <title>Juego de Artimetica</title>
 </head>
 
 <body>
+    <h1>Juego de Aritmética</h1>
 
-    <h1>
-        Juego de aritmetica
-    </h1>
+    <div id="config">
+        <label for="cantidad">¿Cuántas operaciones? (máx. 10)</label>
+        <input type="number" id="cantidad" value="5" min="1" max="10">
+        <button id="btnIniciar">Iniciar juego</button>
+    </div>
+
+    <div id="juego" style="display:none;">
+        <p id="pregunta"></p>
+        <input type="number" id="respuesta" placeholder="Tu respuesta">
+        <button id="btnResponder">Responder</button>
+
+        <p id="feedback"></p>
+        <p id="progreso"></p>
+    </div>
+
+    <div id="resumen" style="display:none;"></div>
 
     <script src="./main.js"></script>
 </body>
