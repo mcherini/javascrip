@@ -3,7 +3,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+}
 
-    h1 {
-        font-size: 50px;
-    }
+h1 {
+    font-size: 50px;
+}

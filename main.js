@@ -111,11 +111,24 @@ function terminarJuego() {
     <h2>Juego finalizado</h2>
     <p>Aciertos: <strong>${aciertos}</strong> de ${cantidad} (${porcentaje}%)</p>
     <p>Tiempo: <strong>${segundos}</strong> segundos</p>
+    <p id="datoExtra">Cargando dato extra...</p>
     <div style="display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.5rem">
       <button id="btnReintentar">Reintentar</button>
       <button id="btnCambiar">Cambiar cantidad</button>
     </div>
   `;
+
+  axios
+    .get("https://uselessfacts.jsph.pl/random.json?language=es")
+    .then((res) => {
+      document.getElementById("datoExtra").textContent =
+        "Dato curioso: " + res.data.text;
+    })
+    .catch((err) => {
+      document.getElementById("datoExtra").textContent =
+        "No se pudo cargar el dato extra.";
+      console.error(err);
+    });
 
   $("#btnReintentar").addEventListener("click", () => {
     aciertos = 0;
